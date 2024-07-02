@@ -15,6 +15,14 @@
         <td><input id="bust_height"></input></td>
     </tr>
     <tr>
+        <td>Mell bőség:</td>
+        <td><input id="bust_length"></input></td>
+    </tr>
+    <tr>
+        <td>Mell alatti bőség:</td>
+        <td><input id="under_bust_length"></input></td>
+    </tr>
+    <tr>
         <td>Derék magasság:</td>
         <td><input id="waist_height"></input></td>
     </tr>
@@ -95,6 +103,15 @@
         <td>Váll szélesség/csípő szélesség arány:</td>
         <td><input id="shoulder_hip_ratio" readonly="true"></input></td>
     </tr>
+    <tr>
+        <td>Melltartóméret:</td>
+        <td><input id="bra_size" readonly="true"></input></td>
+    </tr>
+    <tr>
+        <td>Kosárméret:</td>
+        <td><input id="cup_size" readonly="true"></input></td>
+        <td><input id="cup_size_meta" readonly="true"></input></td>
+    </tr>
 </table>
 <script>
     const height = document.getElementById("height")
@@ -102,6 +119,8 @@
     const chin_height = document.getElementById("chin_height")
     const inseam_height = document.getElementById("inseam_height")
     const bust_height = document.getElementById("bust_height")
+    const bust_length = document.getElementById("bust_length")
+    const under_bust_length = document.getElementById("under_bust_length")
     const waist_height = document.getElementById("waist_height")
     const waist_length = document.getElementById("waist_length")
     const hip_length = document.getElementById("hip_length")
@@ -112,6 +131,7 @@
     const hip_meta = document.getElementById("hip_meta")
     const fingers = document.getElementById("fingers")
     const fingers_meta = document.getElementById("fingers_meta")
+    const cup_size_meta = document.getElementById("cup_size_meta")
 
     const head = document.getElementById("head")
     const upper_body = document.getElementById("upper_body")
@@ -126,6 +146,8 @@
     const waist_head_ratio = document.getElementById("waist_head_ratio")
     const waist = document.getElementById("waist")
     const shoulder_hip_ratio = document.getElementById("shoulder_hip_ratio")
+    const bra_size = document.getElementById("bra_size")
+    const cup_size = document.getElementById("cup_size")
 
     const updateFunc = function () {
         height_meta.value = ""
@@ -145,6 +167,73 @@
                 fingers_meta.value = "hosszú"
             } else            {
                 fingers_meta.value = "rövid/magas"
+            }
+        }
+        if (under_bust_length.value != "") {
+            under_bust_length_value = parseFloat(under_bust_length.value)
+            if (under_bust_length_value < 60) {
+                bra_size.value = "60-nál kisebb"
+            }
+            if (under_bust_length_value >= 60 && under_bust_length_value < 65) {
+                bra_size.value = "60"
+            }
+            if (under_bust_length_value >= 65 && under_bust_length_value < 70) {
+                bra_size.value = "65"
+            }
+            if (under_bust_length_value >= 70 && under_bust_length_value < 75) {
+                bra_size.value = "70"
+            }
+            if (under_bust_length_value >= 75 && under_bust_length_value < 80) {
+                bra_size.value = "75"
+            }
+            if (under_bust_length_value >= 80 && under_bust_length_value < 85) {
+                bra_size.value = "80"
+            }
+            if (under_bust_length_value >= 85 && under_bust_length_value < 90) {
+                bra_size.value = "85"
+            }
+            if (under_bust_length_value >= 90 && under_bust_length_value < 95) {
+                bra_size.value = "90"
+            }
+            if (under_bust_length_value >= 95 && under_bust_length_value < 100) {
+                bra_size.value = "95"
+            }
+            if (under_bust_length_value >= 100 && under_bust_length_value < 105) {
+                bra_size.value = "100"
+            }
+            if (under_bust_length_value >= 105) {
+                bra_size.value = "105-nél nagyobb"
+            }
+        }
+        if (under_bust_length.value != "" && bust_length.value != "") {
+            value = (bust_length.value - under_bust_length.value).toPrecision(3)
+            cup_size.value = value
+            if (value < 12) {
+                cup_size_meta.value = "AA vagy AAA"
+            }
+            if (value >= 12 && value < 14) {
+                cup_size_meta.value = "A"
+            }
+            if (value >= 14 && value < 16) {
+                cup_size_meta.value = "B"
+            }
+            if (value >= 16 && value < 18) {
+                cup_size_meta.value = "C"
+            }
+            if (value >= 18 && value < 20) {
+                cup_size_meta.value = "D"
+            }
+            if (value >= 20 && value < 22) {
+                cup_size_meta.value = "E"
+            }
+            if (value >= 22 && value < 24) {
+                cup_size_meta.value = "F"
+            }
+            if (value >= 26 && value < 27) {
+                cup_size_meta.value = "H"
+            }
+            if (value >= 27) {
+                cup_size_meta.value = "nagyobb mint H"
             }
         }
         if (height.value != "" && chin_height.value != "") {
@@ -222,6 +311,8 @@
     shoulder_width.addEventListener("change", updateFunc)
     hip_width.addEventListener("change", updateFunc)
     fingers.addEventListener("change", updateFunc)
+    bust_length.addEventListener("change", updateFunc)
+    under_bust_length.addEventListener("change", updateFunc)
 </script>
 
 </html>
