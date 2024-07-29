@@ -1,318 +1,411 @@
+<!DOCTYPE html>
 <html>
-<head><title>Stylist</title></head>
-<table>
+
+<head>
+    <title>Stylist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<table border="1" style="border-collapse: collapse;">
     <tr>
-        <td>Test magasság:</td>
-        <td><input id="height"></input></td>
-        <td><input id="height_meta" readonly="true"></input></td>
-    </tr>
-    <tr>
-        <td>Áll magasság:</td>
-        <td><input id="chin_height"></input></td>
-    </tr>
-    <tr>
-        <td>Mell magasság:</td>
-        <td><input id="bust_height"></input></td>
-    </tr>
-    <tr>
-        <td>Mell bőség:</td>
-        <td><input id="bust_length"></input></td>
-    </tr>
-    <tr>
-        <td>Mell alatti bőség:</td>
-        <td><input id="under_bust_length"></input></td>
-    </tr>
-    <tr>
-        <td>Derék magasság:</td>
-        <td><input id="waist_height"></input></td>
-    </tr>
-    <tr>
-        <td>Gát magasság:</td>
-        <td><input id="inseam_height"></input></td>
-    </tr>
-    <tr>
-        <td>Lábszár hossz:</td>
-        <td><input id="lowerleg_length"></input></td>
-    </tr>
-    <tr>
-        <td>Váll szélesség:</td>
-        <td><input id="shoulder_width"></input></td>
-        <td><input id="shoulder_meta" readonly="true"></input></td>
-    </tr>
-    <tr>
-        <td>Csípő szélesség:</td>
-        <td><input id="hip_width"></input></td>
-        <td><input id="hip_meta" readonly="true"></input></td>
-    </tr>
-    <tr>
-        <td>Derék bőség:</td>
-        <td><input id="waist_length"></input></td>
-    </tr>
-    <tr>
-        <td>Csípő bőség:</td>
-        <td><input id="hip_length"></input></td>
-    </tr>
-    <tr>
-        <td>Ujj:</td>
-        <td><input id="fingers"></input></td>
-        <td><input id="fingers_meta" readonly="true"></input></td>
-    </tr>
-    <tr>
-        <td><br></td>
-    </tr>
-    <tr>
-        <td>Fej magasság:</td>
-        <td><input id="head" readonly="true"></input></td>
-    </tr>
-    <tr>
-        <td>Mellcsúcs:</td>
-        <td><input id="bust" readonly="true"></input></td>
-    </tr>
-    <tr>
-        <td>Mell/fej arány:</td>
-        <td><input id="bust_head_ratio" readonly="true"></input></td>
-    </tr>
-    <tr>
-        <td>Láb/fej arány:</td>
-        <td><input id="leg_head_ratio" readonly="true"></input></td>
-    </tr>
-    <tr>
-        <td>Derék:</td>
-        <td><input id="waist" readonly="true"></input></td>
-    </tr>
-    <tr>
-        <td>Derék/fej arány:</td>
-        <td><input id="waist_head_ratio" readonly="true"></input></td>
-    </tr>
-    <tr>
-        <td>Felsőtest hossza:</td>
-        <td><input id="upper_body" readonly="true"></input></td>
-        <td><input id="upper_body_meta" readonly="true"></input></td>
-    </tr>
-    <tr>
-        <td>Alsótest hossza:</td>
-        <td><input id="lower_body" readonly="true"></input></td>
-        <td><input id="lower_body_meta" readonly="true"></input></td>
-    </tr>
-    <tr>
-        <td>Derék bőség/csípő bőség arány:</td>
-        <td><input id="waist_hip_ratio" readonly="true"></input></td>
-        <td><input id="waist_hip_ratio_meta" readonly="true"></input></td>
-    </tr>
-    <tr>
-        <td>Váll szélesség/csípő szélesség arány:</td>
-        <td><input id="shoulder_hip_ratio" readonly="true"></input></td>
-    </tr>
-    <tr>
-        <td>Melltartóméret:</td>
-        <td><input id="bra_size" readonly="true"></input></td>
-    </tr>
-    <tr>
-        <td>Kosárméret:</td>
-        <td><input id="cup_size" readonly="true"></input></td>
-        <td><input id="cup_size_meta" readonly="true"></input></td>
+        <td style="vertical-align: top; width: 50%;">
+            <table border="0" style="border-collapse: collapse;  width: 100%; height: 100%;">
+                <tr>
+                    <td>Fej-áll hossz:</td>
+                    <td><input id="head_chin_length"></input></td>
+                </tr>
+                <tr>
+                    <td>Fej - mellcsúcs hossz:</td>
+                    <td><input id="head_bust_length"></input></td>
+                </tr>
+                <tr>
+                    <td>Fej - derék hossz:</td>
+                    <td><input id="head_waist_length"></input></td>
+                </tr>
+                <tr>
+                    <td>Fej - gát hossz:</td>
+                    <td><input id="head_inseam_length"></input></td>
+                </tr>
+                <tr>
+                    <td>Gát magasság:</td>
+                    <td><input id="inseam_height"></input></td>
+                </tr>
+                <tr>
+                    <td>Mell bőség:</td>
+                    <td><input id="bust_length"></input></td>
+                </tr>
+                <tr>
+                    <td>Mell alatti bőség:</td>
+                    <td><input id="under_bust_length"></input></td>
+                </tr>
+                <tr>
+                    <td>Lábszár hossz:</td>
+                    <td><input id="lowerleg_length"></input></td>
+                </tr>
+                <tr>
+                    <td>Váll szélesség:</td>
+                    <td><input id="shoulder_width"></input></td>
+                    <td><input id="shoulder_meta" readonly="true"></input></td>
+                </tr>
+                <tr>
+                    <td>Csípő szélesség:</td>
+                    <td><input id="hip_width"></input></td>
+                    <td><input id="hip_meta" readonly="true"></input></td>
+                </tr>
+                <tr>
+                    <td>Derék bőség:</td>
+                    <td><input id="waist_length"></input></td>
+                </tr>
+                <tr>
+                    <td>Csípő bőség:</td>
+                    <td><input id="hip_length"></input></td>
+                </tr>
+                <tr>
+                    <td>Ujj:</td>
+                    <td><input id="fingers"></input></td>
+                    <td><input id="fingers_meta" readonly="true"></input></td>
+                </tr>
+                <tr>
+                    <td><br></td>
+                </tr>
+                <tr>
+                    <td>Test magasság:</td>
+                    <td><input id="height" readonly="true"></input></td>
+                    <td><input id="height_meta" readonly="true"></input></td>
+                </tr>
+                <tr>
+                    <td>Mell/fej arány:</td>
+                    <td><input id="bust_head_ratio" readonly="true"></input></td>
+                </tr>
+                <tr>
+                    <td>Láb/fej arány:</td>
+                    <td><input id="leg_head_ratio" readonly="true"></input></td>
+                </tr>
+                <tr>
+                    <td>Derék/fej arány:</td>
+                    <td><input id="waist_head_ratio" readonly="true"></input></td>
+                </tr>
+                <tr>
+                    <td>Felsőtest hossza:</td>
+                    <td><input id="upper_body" readonly="true"></input></td>
+                    <td><input id="upper_body_meta" readonly="true"></input></td>
+                </tr>
+                <tr>
+                    <td>Alsótest hossza:</td>
+                    <td><input id="lower_body" readonly="true"></input></td>
+                    <td><input id="lower_body_meta" readonly="true"></input></td>
+                </tr>
+                <tr>
+                    <td>Derék bőség/csípő bőség arány:</td>
+                    <td><input id="waist_hip_ratio" readonly="true"></input></td>
+                    <td><input id="waist_hip_ratio_meta" readonly="true"></input></td>
+                </tr>
+                <tr>
+                    <td>Váll szélesség/csípő szélesség arány:</td>
+                    <td><input id="shoulder_hip_ratio" readonly="true"></input></td>
+                </tr>
+                <tr>
+                    <td>Melltartóméret:</td>
+                    <td><input id="bra_size" readonly="true"></input></td>
+                </tr>
+                <tr>
+                    <td>Kosárméret:</td>
+                    <td><input id="cup_size" readonly="true"></input></td>
+                    <td><input id="cup_size_meta" readonly="true"></input></td>
+                </tr>
+            </table>
+        </td>
+        <td style="width: 48%; vertical-align: top; padding: 0;">
+            <img src="body.png" alt="Your Image" style="width: 100%; height: 100%; object-fit: cover;">
+        </td>
+        <td style="vertical-align: top; height: 100%; width: 2%;">
+            <table border="0" style="vertical-align: top; width: 100%; height: 100%; border-collapse: collapse;">
+                <tr id="highlight1" style="background-color: #FFFFFF;">
+                    <td></td>
+                </tr>
+                <tr id="highlight2" style="background-color: #FFFFFF;">
+                    <td></td>
+                </tr>
+                <tr id="highlight3" style="background-color: #FFFFFF;">
+                    <td></td>
+                </tr>
+                <tr id="highlight4" style="background-color: #FFFFFF;">
+                    <td></td>
+                </tr>
+                <tr id="highlight5" style="background-color: #FFFFFF;">
+                    <td></td>
+                </tr>
+                <tr id="highlight6" style="background-color: #FFFFFF;">
+                    <td></td>
+                </tr>
+                <tr id="highlight7" style="background-color: #FFFFFF;">
+                    <td></td>
+                </tr>
+                <tr id="highlight8" style="background-color: #FFFFFF;">
+                    <td></td>
+                </tr>
+            </table>
+        </td>
     </tr>
 </table>
 <script>
-    const height = document.getElementById("height")
-    const height_meta = document.getElementById("height_meta")
-    const chin_height = document.getElementById("chin_height")
-    const inseam_height = document.getElementById("inseam_height")
-    const bust_height = document.getElementById("bust_height")
-    const bust_length = document.getElementById("bust_length")
-    const under_bust_length = document.getElementById("under_bust_length")
-    const waist_height = document.getElementById("waist_height")
-    const waist_length = document.getElementById("waist_length")
-    const hip_length = document.getElementById("hip_length")
-    const lowerleg_length = document.getElementById("lowerleg_length")
-    const shoulder_width = document.getElementById("shoulder_width")
-    const hip_width = document.getElementById("hip_width")
-    const shoulder_meta = document.getElementById("shoulder_meta")
-    const hip_meta = document.getElementById("hip_meta")
-    const fingers = document.getElementById("fingers")
-    const fingers_meta = document.getElementById("fingers_meta")
-    const cup_size_meta = document.getElementById("cup_size_meta")
-
-    const head = document.getElementById("head")
-    const upper_body = document.getElementById("upper_body")
-    const lower_body = document.getElementById("lower_body")
-    const upper_body_meta = document.getElementById("upper_body_meta")
-    const lower_body_meta = document.getElementById("lower_body_meta")
-    const waist_hip_ratio = document.getElementById("waist_hip_ratio")
-    const waist_hip_ratio_meta = document.getElementById("waist_hip_ratio_meta")
-    const bust = document.getElementById("bust")
-    const bust_head_ratio = document.getElementById("bust_head_ratio")
-    const leg_head_ratio = document.getElementById("leg_head_ratio")
-    const waist_head_ratio = document.getElementById("waist_head_ratio")
-    const waist = document.getElementById("waist")
-    const shoulder_hip_ratio = document.getElementById("shoulder_hip_ratio")
-    const bra_size = document.getElementById("bra_size")
-    const cup_size = document.getElementById("cup_size")
+    let attributes = []
+    let measuredValues = []
 
     const updateFunc = function () {
-        height_meta.value = ""
-        if (height.value != "") {
-            height_value = parseFloat(height.value)
-            if (height_value > 173) {
-                height_meta.value = "tall"
-            }
-            if (height_value < 163) {
-                height_meta.value = "petite"
+        attributes.forEach(element => {
+            element.Set("")
+        });
+        attributes.forEach(element => {
+            element.refresh()
+        });
+    }
+
+    class MeasuredValue {
+        constructor(sourceId, highlights) {
+            this.sourceId = sourceId
+            this.highlights = highlights
+            measuredValues.push(this)
+            let element = document.getElementById(this.sourceId)
+            element.addEventListener("change", updateFunc)
+            element.addEventListener("focus", () => this.onFocus())
+            element.addEventListener("blur", () => this.onBlur())
+        }
+
+        getValue() {
+            let element = document.getElementById(this.sourceId)
+            //console.log("%s %s", this.sourceId, element.value)
+            return parseFloat(element.value)
+        }
+
+        onFocus() {
+            console.log("%s focus", this.sourceId)
+            for (var i = 1; i <= 8; i++) {
+                if (this.highlights.includes(i)) {
+                    document.getElementById("highlight" + i).style.backgroundColor = "#dd6ddd"
+                } else {
+                    document.getElementById("highlight" + i).style.backgroundColor = "#FFFFFF"
+                }
             }
         }
-        fingers_meta.value = ""
-        if (fingers.value != "") {
-            fingers_value = parseFloat(fingers.value)
-            if (fingers_value >= 8) {
-                fingers_meta.value = "hosszú"
-            } else            {
-                fingers_meta.value = "rövid/magas"
-            }
-        }
-        if (under_bust_length.value != "") {
-            under_bust_length_value = parseFloat(under_bust_length.value)
-            if (under_bust_length_value < 60) {
-                bra_size.value = "60-nál kisebb"
-            }
-            if (under_bust_length_value >= 60 && under_bust_length_value < 65) {
-                bra_size.value = "60"
-            }
-            if (under_bust_length_value >= 65 && under_bust_length_value < 70) {
-                bra_size.value = "65"
-            }
-            if (under_bust_length_value >= 70 && under_bust_length_value < 75) {
-                bra_size.value = "70"
-            }
-            if (under_bust_length_value >= 75 && under_bust_length_value < 80) {
-                bra_size.value = "75"
-            }
-            if (under_bust_length_value >= 80 && under_bust_length_value < 85) {
-                bra_size.value = "80"
-            }
-            if (under_bust_length_value >= 85 && under_bust_length_value < 90) {
-                bra_size.value = "85"
-            }
-            if (under_bust_length_value >= 90 && under_bust_length_value < 95) {
-                bra_size.value = "90"
-            }
-            if (under_bust_length_value >= 95 && under_bust_length_value < 100) {
-                bra_size.value = "95"
-            }
-            if (under_bust_length_value >= 100 && under_bust_length_value < 105) {
-                bra_size.value = "100"
-            }
-            if (under_bust_length_value >= 105) {
-                bra_size.value = "105-nél nagyobb"
-            }
-        }
-        if (under_bust_length.value != "" && bust_length.value != "") {
-            value = (bust_length.value - under_bust_length.value).toPrecision(3)
-            cup_size.value = value
-            if (value < 12) {
-                cup_size_meta.value = "AA vagy AAA"
-            }
-            if (value >= 12 && value < 14) {
-                cup_size_meta.value = "A"
-            }
-            if (value >= 14 && value < 16) {
-                cup_size_meta.value = "B"
-            }
-            if (value >= 16 && value < 18) {
-                cup_size_meta.value = "C"
-            }
-            if (value >= 18 && value < 20) {
-                cup_size_meta.value = "D"
-            }
-            if (value >= 20 && value < 22) {
-                cup_size_meta.value = "E"
-            }
-            if (value >= 22 && value < 24) {
-                cup_size_meta.value = "F"
-            }
-            if (value >= 26 && value < 27) {
-                cup_size_meta.value = "H"
-            }
-            if (value >= 27) {
-                cup_size_meta.value = "nagyobb mint H"
-            }
-        }
-        if (height.value != "" && chin_height.value != "") {
-            head_length = (height.value - chin_height.value).toPrecision(3)
-            head.value = head_length
-        }
-        if (height.value != "" && inseam_height.value != "") {
-            upper_body_length = (height.value - inseam_height.value).toPrecision(3)
-            upper_body.value = upper_body_length
-        }
-        lower_body.value = inseam_height.value
-        if (waist_length.value != "" && hip_length.value != "") {
-            waist_hip_ratio_value = (waist_length.value / hip_length.value).toPrecision(3)
-            waist_hip_ratio.value = waist_hip_ratio_value
-            if (waist_hip_ratio_value > 0.72) {
-                waist_hip_ratio_meta.value = "enyhén definiált"
-            } else {
-                waist_hip_ratio_meta.value = "erősen definiált"
-            }
-        }
-        if (shoulder_width.value != "" && hip_width.value != "") {
-            shoulder_hip_ratio.value = (shoulder_width.value / hip_width.value).toPrecision(3)
-        }
-        if (height.value != "" && bust_height.value != "") {
-            bust.value = (height.value - bust_height.value).toPrecision(3)
-        }
-        if (height.value != "" && waist_height.value != "") {
-            waist.value = (height.value - waist_height.value).toPrecision(3)
-        }
-        if (bust.value != "" && head.value != "") {
-            bust_head_ratio.value = (bust.value / head.value).toPrecision(3)
-        }
-        if (lowerleg_length.value != "" && head.value != "") {
-            leg_head_ratio.value = (lowerleg_length.value / head.value).toPrecision(3)
-        }
-        if (waist.value != "" && head.value != "") {
-            waist_head_ratio.value = (waist.value / head.value).toPrecision(3)
-        }
-        shoulder_meta.value = ""
-        hip_meta.value = ""
-        if (shoulder_width.value != "" && hip_width.value != "") {
-            shoulder = parseFloat(shoulder_width.value)
-            hip = parseFloat(hip_width.value)
-            if (shoulder > hip) {
-                shoulder_meta.value = "nagyobb"
-            }
-            if (shoulder < hip) {
-                hip_meta.value = "nagyobb"
-            }
-        }
-        upper_body_meta.value = ""
-        lower_body_meta.value = ""
-        if (upper_body.value != "" && lower_body.value != "") {
-            upper = parseFloat(upper_body.value)
-            lower = parseFloat(lower_body.value)
-            if (upper > lower) {
-                upper_body_meta.value = "hosszabb"
-            }
-            if (upper < lower) {
-                lower_body_meta.value = "hosszabb"
-            }
+
+        onBlur() {
+            console.log("%s blur", this.sourceId)
         }
     }
 
-    height.addEventListener("change", updateFunc)
-    chin_height.addEventListener("change", updateFunc)
-    inseam_height.addEventListener("change", updateFunc)
-    waist_height.addEventListener("change", updateFunc)
-    waist_length.addEventListener("change", updateFunc)
-    hip_length.addEventListener("change", updateFunc)
-    bust_height.addEventListener("change", updateFunc)
-    lowerleg_length.addEventListener("change", updateFunc)
-    head.addEventListener("change", updateFunc)
-    bust.addEventListener("change", updateFunc)
-    shoulder_width.addEventListener("change", updateFunc)
-    hip_width.addEventListener("change", updateFunc)
-    fingers.addEventListener("change", updateFunc)
-    bust_length.addEventListener("change", updateFunc)
-    under_bust_length.addEventListener("change", updateFunc)
+    class DisplayedAttribute {
+        constructor(targetId) {
+            this.targetId = targetId
+            attributes.push(this)
+        }
+
+        Set(value) {
+            if (typeof value === 'string' && value != "NaN") {
+                document.getElementById(this.targetId).value = value
+            }
+            if (isNaN(value)) {
+                return
+            }
+            document.getElementById(this.targetId).value = value
+        }
+
+        refresh() {
+        }
+    }
+
+    let headChinLengthValue = new MeasuredValue("head_chin_length", [1])
+    let headBustLengthValue = new MeasuredValue("head_bust_length", [1, 2])
+    let headWaistLengthValue = new MeasuredValue("head_waist_length", [1, 2, 3])
+    let headInseamLengthValue = new MeasuredValue("head_inseam_length", [1, 2, 3, 4])
+    let inseamHeightValue = new MeasuredValue("inseam_height", [5, 6, 7, 8])
+    let bustLengthValue = new MeasuredValue("bust_length", [])
+    let underBustLengthValue = new MeasuredValue("under_bust_length", [])
+    let lowerLegLengthValue = new MeasuredValue("lowerleg_length", [7, 8])
+    let shoulderWidthValue = new MeasuredValue("shoulder_width", [])
+    let hipWidthValue = new MeasuredValue("hip_width", [])
+    let waistLengthValue = new MeasuredValue("waist_length", [])
+    let hipLengthValue = new MeasuredValue("hip_length", [])
+    let fingersValue = new MeasuredValue("fingers", [])
+
+    let heightAttribute = new DisplayedAttribute("height_meta")
+    let heightValue = new DisplayedAttribute("height")
+    heightValue.refresh = function () {
+        let v = headInseamLengthValue.getValue() + inseamHeightValue.getValue()
+        heightValue.Set(v)
+        if (v > 173) {
+            heightAttribute.Set("tall")
+        }
+        if (v < 163) {
+            heightAttribute.Set("petite")
+        }
+    }
+
+    let bustHeadRatio = new DisplayedAttribute("bust_head_ratio")
+    bustHeadRatio.refresh = function () {
+        let v = (headBustLengthValue.getValue() / headChinLengthValue.getValue()).toPrecision(3)
+        bustHeadRatio.Set(v)
+    }
+
+    let legHeadRatio = new DisplayedAttribute("leg_head_ratio")
+    legHeadRatio.refresh = function () {
+        let v = (lowerLegLengthValue.getValue() / headChinLengthValue.getValue()).toPrecision(3)
+        legHeadRatio.Set(v)
+    }
+
+    let waistHeadRatio = new DisplayedAttribute("waist_head_ratio")
+    waistHeadRatio.refresh = function () {
+        let v = (headWaistLengthValue.getValue() / headChinLengthValue.getValue()).toPrecision(3)
+        waistHeadRatio.Set(v)
+    }
+
+    let upperBody = new DisplayedAttribute("upper_body")
+    upperBody.refresh = function () {
+        upperBody.Set(headInseamLengthValue.getValue())
+    }
+
+    let lowerBody = new DisplayedAttribute("lower_body")
+    lowerBody.refresh = function () {
+        lowerBody.Set(inseamHeightValue.getValue())
+    }
+
+    let upperBodyMeta = new DisplayedAttribute("upper_body_meta")
+    upperBodyMeta.refresh = function () {
+        if (headInseamLengthValue.getValue() > inseamHeightValue.getValue()) {
+            upperBodyMeta.Set("hosszabb")
+        }
+    }
+    let lowerBodyMeta = new DisplayedAttribute("lower_body_meta")
+    lowerBodyMeta.refresh = function () {
+        if (inseamHeightValue.getValue() > headInseamLengthValue.getValue()) {
+            lowerBodyMeta.Set("hosszabb")
+        }
+    }
+    let fingersMeta = new DisplayedAttribute("fingers_meta")
+    fingersMeta.refresh = function () {
+        if (isNaN(fingersValue.getValue())) {
+            return
+        }
+        if (fingersValue.getValue() >= 8) {
+            fingersMeta.Set("hosszú")
+        } else {
+            fingersMeta.Set("rövid/magas")
+        }
+    }
+    let braSize = new DisplayedAttribute("bra_size")
+    braSize.refresh = function () {
+        let under_bust_length_value = underBustLengthValue.getValue()
+        if (isNaN(under_bust_length_value)) {
+            return
+        }
+        if (under_bust_length_value < 60) {
+            braSize.Set("60-nál kisebb")
+        }
+        if (under_bust_length_value >= 60 && under_bust_length_value < 65) {
+            braSize.Set("60")
+        }
+        if (under_bust_length_value >= 65 && under_bust_length_value < 70) {
+            braSize.Set("65")
+        }
+        if (under_bust_length_value >= 70 && under_bust_length_value < 75) {
+            braSize.Set("70")
+        }
+        if (under_bust_length_value >= 75 && under_bust_length_value < 80) {
+            braSize.Set("75")
+        }
+        if (under_bust_length_value >= 80 && under_bust_length_value < 85) {
+            braSize.Set("80")
+        }
+        if (under_bust_length_value >= 85 && under_bust_length_value < 90) {
+            braSize.Set("85")
+        }
+        if (under_bust_length_value >= 90 && under_bust_length_value < 95) {
+            braSize.Set("90")
+        }
+        if (under_bust_length_value >= 95 && under_bust_length_value < 100) {
+            braSize.Set("95")
+        }
+        if (under_bust_length_value >= 100 && under_bust_length_value < 105) {
+            braSize.Set("100")
+        }
+        if (under_bust_length_value >= 105) {
+            braSize.Set("105-nél nagyobb")
+        }
+    }
+    let cupSize = new DisplayedAttribute("cup_size")
+    let cupSizeMeta = new DisplayedAttribute("cup_size_meta")
+    cupSize.refresh = function () {
+        let value = (bustLengthValue.getValue() - underBustLengthValue.getValue()).toPrecision(3)
+        cupSize.Set(value)
+    }
+
+    cupSizeMeta.refresh = function () {
+        let value = (bustLengthValue.getValue() - underBustLengthValue.getValue()).toPrecision(3)
+        if (value < 12) {
+            cupSizeMeta.Set("AA vagy AAA")
+        }
+        if (value >= 12 && value < 14) {
+            cupSizeMeta.Set("A")
+        }
+        if (value >= 14 && value < 16) {
+            cupSizeMeta.Set("B")
+        }
+        if (value >= 16 && value < 18) {
+            cupSizeMeta.Set("C")
+        }
+        if (value >= 18 && value < 20) {
+            cupSizeMeta.Set("D")
+        }
+        if (value >= 20 && value < 22) {
+            cupSizeMeta.Set("E")
+        }
+        if (value >= 22 && value < 24) {
+            cupSizeMeta.Set("F")
+        }
+        if (value >= 26 && value < 27) {
+            cupSizeMeta.Set("H")
+        }
+        if (value >= 27) {
+            cupSizeMeta.Set("nagyobb mint H")
+        }
+    }
+
+    let waistHipRatio = new DisplayedAttribute("waist_hip_ratio")
+    waistHipRatio.refresh = function () {
+        waistHipRatio.Set((waistLengthValue.getValue() / hipLengthValue.getValue()).toPrecision(3))
+    }
+    let waistHipRatioMeta = new DisplayedAttribute("waist_hip_ratio_meta")
+    waistHipRatioMeta.refresh = function () {
+        let waistHipRatioValue = (waistLengthValue.getValue() / hipLengthValue.getValue()).toPrecision(3)
+        if (isNaN(waistLengthValue)) {
+            return
+        }
+        if (waistHipRatioValue > 0.72) {
+            waistHipRatioMeta.Set("enyhén definiált")
+        } else {
+            waistHipRatioMeta.Set("erősen definiált")
+        }
+    }
+
+    let shoulderHipRatio = new DisplayedAttribute("shoulder_hip_ratio")
+    shoulderHipRatio.refresh = function () {
+        shoulderHipRatio.Set((shoulderWidthValue.getValue() / hipWidthValue.getValue()).toPrecision(3))
+    }
+    let shoulderMeta = new DisplayedAttribute("shoulder_meta")
+    shoulderMeta.refresh = function () {
+        shoulder = parseFloat(shoulder_width.value)
+        hip = parseFloat(hip_width.value)
+        if (shoulderWidthValue.getValue() > hipWidthValue.getValue()) {
+            shoulderMeta.Set("nagyobb")
+        }
+    }
+    let hipMeta = new DisplayedAttribute("hip_meta")
+    hipMeta.refresh = function () {
+        shoulder = parseFloat(shoulder_width.value)
+        hip = parseFloat(hip_width.value)
+        if (shoulderWidthValue.getValue() < hipWidthValue.getValue()) {
+            hipMeta.Set("nagyobb")
+        }
+    }
 </script>
 
 </html>
