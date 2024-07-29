@@ -173,8 +173,10 @@
 
         getValue() {
             let element = document.getElementById(this.sourceId)
+            let value = element.value
             //console.log("%s %s", this.sourceId, element.value)
-            return parseFloat(element.value)
+            value = value.replace(",", ".")
+            return parseFloat(value)
         }
 
         onFocus() {
@@ -232,11 +234,15 @@
     heightValue.refresh = function () {
         let v = headInseamLengthValue.getValue() + inseamHeightValue.getValue()
         heightValue.Set(v)
+        if (isNaN(v)) {
+            return
+        }
         if (v > 173) {
             heightAttribute.Set("tall")
-        }
-        if (v < 163) {
+        } else if (v < 163) {
             heightAttribute.Set("petite")
+        } else {
+            heightAttribute.Set("normál")
         }
     }
 
@@ -376,7 +382,7 @@
     let waistHipRatioMeta = new DisplayedAttribute("waist_hip_ratio_meta")
     waistHipRatioMeta.refresh = function () {
         let waistHipRatioValue = (waistLengthValue.getValue() / hipLengthValue.getValue()).toPrecision(3)
-        if (isNaN(waistLengthValue)) {
+        if (isNaN(waistHipRatioValue)) {
             return
         }
         if (waistHipRatioValue > 0.72) {
