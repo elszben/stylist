@@ -7,7 +7,7 @@
 </head>
 <table border="1" style="border-collapse: collapse;">
     <tr>
-        <td style="vertical-align: top; width: 50%;">
+        <td style="vertical-align: top; width: 100%;">
             <table border="0" style="border-collapse: collapse;  width: 100%; height: 100%;">
                 <tr>
                     <td>Fej-áll hossz:</td>
@@ -88,11 +88,13 @@
                     <td>Felsőtest hossza:</td>
                     <td><input id="upper_body" readonly="true"></input></td>
                     <td><input id="upper_body_meta" readonly="true"></input></td>
+                    <td><input id="upper_body_meta2" readonly="true"></input></td>
                 </tr>
                 <tr>
                     <td>Alsótest hossza:</td>
                     <td><input id="lower_body" readonly="true"></input></td>
                     <td><input id="lower_body_meta" readonly="true"></input></td>
+                    <td><input id="lower_body_meta2" readonly="true"></input></td>
                 </tr>
                 <tr>
                     <td>Derék bőség/csípő bőség arány:</td>
@@ -111,37 +113,6 @@
                     <td>Kosárméret:</td>
                     <td><input id="cup_size" readonly="true"></input></td>
                     <td><input id="cup_size_meta" readonly="true"></input></td>
-                </tr>
-            </table>
-        </td>
-        <td style="width: 48%; vertical-align: top; padding: 0;">
-            <img src="body.png" alt="Your Image" style="width: 100%; height: 100%; object-fit: cover;">
-        </td>
-        <td style="vertical-align: top; height: 100%; width: 2%;">
-            <table border="0" style="vertical-align: top; width: 100%; height: 100%; border-collapse: collapse;">
-                <tr id="highlight1" style="background-color: #FFFFFF;">
-                    <td></td>
-                </tr>
-                <tr id="highlight2" style="background-color: #FFFFFF;">
-                    <td></td>
-                </tr>
-                <tr id="highlight3" style="background-color: #FFFFFF;">
-                    <td></td>
-                </tr>
-                <tr id="highlight4" style="background-color: #FFFFFF;">
-                    <td></td>
-                </tr>
-                <tr id="highlight5" style="background-color: #FFFFFF;">
-                    <td></td>
-                </tr>
-                <tr id="highlight6" style="background-color: #FFFFFF;">
-                    <td></td>
-                </tr>
-                <tr id="highlight7" style="background-color: #FFFFFF;">
-                    <td></td>
-                </tr>
-                <tr id="highlight8" style="background-color: #FFFFFF;">
-                    <td></td>
                 </tr>
             </table>
         </td>
@@ -275,15 +246,25 @@
     }
 
     let upperBodyMeta = new DisplayedAttribute("upper_body_meta")
+    let upperBodyMeta2 = new DisplayedAttribute("upper_body_meta2")
     upperBodyMeta.refresh = function () {
-        if (headInseamLengthValue.getValue() > inseamHeightValue.getValue()) {
-            upperBodyMeta.Set("hosszabb")
+        let diff = headInseamLengthValue.getValue() - inseamHeightValue.getValue()
+        if (diff > 0) {
+            upperBodyMeta.Set(`hosszabb ${diff} cm-rel`)
+            if (diff > 15) {
+                upperBodyMeta2.Set("szignifikáns")
+            }
         }
     }
     let lowerBodyMeta = new DisplayedAttribute("lower_body_meta")
+    let lowerBodyMeta2 = new DisplayedAttribute("lower_body_meta2")
     lowerBodyMeta.refresh = function () {
-        if (inseamHeightValue.getValue() > headInseamLengthValue.getValue()) {
-            lowerBodyMeta.Set("hosszabb")
+        diff = inseamHeightValue.getValue() - headInseamLengthValue.getValue()
+        if (diff > 0) {
+            upperBodyMeta.Set(`hosszabb ${diff} cm-rel`)
+            if (diff > 15) {
+                lowerBodyMeta2.Set("szignifikáns")
+            }
         }
     }
     let fingersMeta = new DisplayedAttribute("fingers_meta")
